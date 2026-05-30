@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Menú de Meriendas</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <ul class="menu-navegacion">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="destacados.html">Destacados</a></li>
+        <li><a href="listado.html">Listado</a></li>
+    </ul>
+
+    <main>
+        <h1>Menú de Meriendas</h1>
+        <div class="campo">
+            <ul id="listaMeriendas" class="lista-meriendas"></ul>
+        </div>
+        <div class="campo">
+            <button id="btnContar">Contar Meriendas</button>
+        </div>
+        <p id="txtContador" class="contador-texto"></p>
+    </main>
+
+    <script>
+        const meriendas = ["Café con leche", "Tostadas con queso", "Licuado de banana", "Medialunas", "Yogur con cereales"];
+        const listaHTML = document.getElementById("listaMeriendas");
+        const btnContar = document.getElementById("btnContar");
+        const txtContador = document.getElementById("txtContador");
+
+        meriendas.forEach(merienda => {
+            const li = document.createElement("li");
+            li.textContent = merienda;
+            listaHTML.appendChild(li);
+        });
+
+        btnContar.addEventListener("click", () => {
+            txtContador.textContent = `El menú tiene un total de ${meriendas.length} meriendas disponibles.`;
+        });
+    </script>
+</body>
+</html>
