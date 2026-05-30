@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrado de Elementos</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <ul class="menu-navegacion">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="destacados.html">Destacados</a></li>
+        <li><a href="listado.html">Listado</a></li>
+    </ul>
+
+    <main>
+        <h1>Filtrado de Alimentos</h1>
+        <div class="campo">
+            <button id="btnTodos">Mostrar Todos</button>
+            <button id="btnFrutas" style="background-color: darkmagenta;">Solo Frutas</button>
+        </div>
+        <div id="galeriaAlimentos" class="contenedor-tarjetas"></div>
+    </main>
+
+    <script>
+        const alimentos = [
+            { nombre: "Manzana", tipo: "fruta" },
+            { nombre: "Lechuga", tipo: "verdura" },
+            { nombre: "Frutilla", tipo: "fruta" },
+            { nombre: "Zanahoria", tipo: "verdura" },
+            { nombre: "Banana", tipo: "fruta" },
+            { nombre: "Tomate", tipo: "verdura" }
+        ];
+
+        const galeria = document.getElementById("galeriaAlimentos");
+        const btnTodos = document.getElementById("btnTodos");
+        const btnFrutas = document.getElementById("btnFrutas");
+
+        function renderizarBloques(lista) {
+            galeria.innerHTML = "";
+            lista.forEach(item => {
+                const bloque = document.createElement("div");
+                bloque.className = "tarjeta";
+                bloque.innerHTML = `<h3>${item.nombre}</h3><p>Categoría: ${item.tipo}</p>`;
+                galeria.appendChild(bloque);
+            });
+        }
+
+        renderizarBloques(alimentos);
+
+        btnFrutas.addEventListener("click", () => {
+            const frutasFiltradas = alimentos.filter(alimento => alimento.tipo === "fruta");
+            renderizarBloques(frutasFiltradas);
+        });
+
+        btnTodos.addEventListener("click", () => {
+            renderizarBloques(alimentos);
+        });
+    </script>
+</body>
+</html>
