@@ -1,0 +1,104 @@
+body {
+    margin: 0%;
+    font-family: sans-serif;
+    background-color:plum;
+}
+
+.menu-navegacion {
+    list-style: none;
+    margin: 0;
+    padding: 15px;
+    background-color: #ffffff;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.menu-navegacion li{
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.menu-navegacion li a {
+    text-decoration: none;
+    color: cornflowerblue;
+    font-weight: bold;
+}
+
+.menu-navegacion li a:hover {
+    color: #ae33ac;
+}
+
+main {
+    width: 80%;
+    max-width: 960px;
+    margin: 20px auto;
+    border: 2px solid cornflowerblue;
+    border-radius: 10px;
+    background-color: lightpink;
+    padding: 20px;
+}
+
+h1 {
+    margin-top: 0%;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.campo {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+button {
+    padding: 8px 15px;
+    background-color: cornflowerblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: royalblue;
+}
+
+.lista-meriendas {
+    background: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    display: inline-block;
+    text-align: center;
+}
+
+.contenedor-tarjeta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 15px;
+}
+.tarjeta {
+    background-color: white;
+    border: 1px solid #d7cece;
+    border-radius: 8px;
+    padding: 15px;
+    width: 180px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.tarjeta-seleccionada {
+    border-color: #ff5395;
+    border: 2px solid #ff78ac;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #ff83b3;
+}
+.contador-texto {
+    font-weight: bold;
+    font-size: 1.1em;
+    text-align: center;
+    margin-top: 10px;
+    color: black;
+   
+}
