@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tarjetas Seleccionables</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <ul class="menu-navegacion">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="destacados.html">Destacados</a></li>
+        <li><a href="listado.html">Listado</a></li>
+    </ul>
+
+    <main>
+        <h1>Películas Recomendadas</h1>
+        <p style="text-align: center;">Hacé clic sobre las tarjetas para seleccionarlas:</p>
+        <div id="contenedorTarjetas" class="contenedor-tarjetas"></div>
+        <p id="totalSeleccionadas" class="contador-texto">Tarjetas seleccionadas: 0</p>
+    </main>
+
+    <script>
+        const peliculas = [
+            { id: 1, titulo: "Batman", genero: "Acción" },
+            { id: 2, titulo: "Shrek", genero: "Animación" },
+            { id: 3, titulo: "Inception", genero: "Sci-Fi" },
+            { id: 4, titulo: "Interstellar", genero: "Drama" }
+        ];
+
+        const contenedor = document.getElementById("contenedorTarjetas");
+        const totalTexto = document.getElementById("totalSeleccionadas");
+
+        function actualizarContador() {
+            const seleccionadas = document.querySelectorAll(".tarjeta-seleccionada").length;
+            totalTexto.textContent = `Tarjetas seleccionadas: ${seleccionadas}`;
+        }
+
+        peliculas.forEach(pelicula => {
+            const card = document.createElement("div");
+            card.className = "tarjeta";
+            card.innerHTML = `<h3>${pelicula.titulo}</h3><p>${pelicula.genero}</p>`;
+
+            card.addEventListener("click", () => {
+                card.classList.toggle("tarjeta-seleccionada");
+                actualizarContador();
+            });
+
+            contenedor.appendChild(card);
+        });
+    </script>
+</body>
+</html>
